@@ -1,0 +1,11 @@
+description:
+    xpath: '/html/body/div[4]/div[3]/div[2]/main/div[3]/div[2]/div/p[1]'
+
+speed: 
+    xpath: '/html/body/div[4]/div[3]/div[2]/main/div[3]/div[2]/div/p[3]'
+
+stats: 
+    xpath: '/html/body/div[4]/div[3]/div[2]/main/div[3]/div[2]/div/p[5]'
+
+skills: 
+    xpath: '/html/body/div[4]/div[3]/div[2]/main/div[3]/div[2]/div/p[7]'
