@@ -110,11 +110,13 @@ class Guerrero(CaracteristicasPrincipales):
         """
         return f'Ataca!'
         
-    def poder(self,peronaje):
+    def poder(self,personaje):
         """ 
         Devuelve el ataque del guerrero
         """
-        return f'¡{self.nombre} arremete contra {peronaje.nombre} con furia!'    
+        if self == personaje:
+            return f'{self.nombre} esta muy mal herido por las batallas pasadas'
+        return f'¡{self.nombre} arremete contra {personaje.nombre} con furia!'    
         
 class Mago(CaracteristicasPrincipales):
     #personaje principal, con la misma estructura del guerrero
@@ -131,6 +133,8 @@ class Mago(CaracteristicasPrincipales):
         """
         Devuelve el poder del mago 
         """
+        if self == enemigo:
+            return f'{self.nombre} Recivio una contra al lanzar sus hechizos, reciviendo daño de estos'
         return f'{self.nombre} esta lanzando hechizos mortales a {enemigo.nombre}'
         
 class Hechicero(CaracteristicasPrincipales):
@@ -145,8 +149,9 @@ class Hechicero(CaracteristicasPrincipales):
         return f'Conjurar hechizos¡'
     
     def poder(self, enemigo):
+        if self == enemigo:
+            return f'A {self.nombre} le salieron mal los conjuros, padesiendo de una enfermedad destructiva '
         return f'{self.nombre} esta conjurando pociones para usar en contra de {enemigo.nombre}'
-            
             
 #tanto el explorador como el clerigo tienen herencia multiple, y estos tambien heredan las cosas ta heredadas de los perosnajes 
 class Explorador(Guerrero,Hechicero):
@@ -188,4 +193,6 @@ class Clerigo(Guerrero,Mago):
         """
         Devuelve el poder de clase del personaje al curar a un aliado
         """
+        if self == aliado:
+            return f'{self.nombre} Esta usando su poder para salvarse a si mismo '
         return f'{self.nombre} esta usando su poder para salvar a {aliado.nombre}'
